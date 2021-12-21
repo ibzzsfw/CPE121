@@ -1,0 +1,523 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Lab"," ","4"," ","Algorithms"}],"Title",
+ExpressionUUID -> "0999a71e-9f16-475f-a53e-481312657359"],Cell[
+CellGroupData[{Cell[
+TextData[
+{"1",StyleBox[RowBox[{"."," "}]],"Implement"," ","the"," ","binary"," ","search"," ","presented"," ","as"}],
+"Subtitle",ExpressionUUID -> "98321c1b-b041-4120-b7bd-1d6f0cba871e"],Cell[
+TextData[
+{StyleBox[StyleBox[StyleBox["ALGORITHM",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[RowBox[{StyleBox[StyleBox[StyleBox[":",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]]}]],StyleBox[StyleBox[StyleBox["The",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Binary",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Search",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Algorithm",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],"\n",StyleBox[StyleBox[
+"procedure",FontFamily -> "Times New Roman"],FontWeight -> Bold],"\[NonBreakingSpace]",StyleBox[
+StyleBox["binary",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[
+StyleBox[" ",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[StyleBox[
+"search",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox["(",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["x",FontFamily -> "Times New Roman"],FontSlant -> Plain],StyleBox[RowBox[
+{StyleBox[":",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"]}]],StyleBox[
+"integer",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox[",",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[",",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[",",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["...,",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[":",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox["increasing",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["integers",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox[")",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"{",FontFamily -> "Times New Roman"]}]],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["left",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["endpoint",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["of",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["search",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["interval",FontFamily -> "Times New Roman"],StyleBox[
+"}",FontFamily -> "Times New Roman"],"\n",StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["{",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["right",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["endpoint",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["of",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["search",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["interval",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["}",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox[StyleBox["while",FontFamily -> "Times New Roman"],
+FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["<",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["j",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"\t",FontFamily -> "Times New Roman"],StyleBox["m",FontFamily -> "Times New Roman"],StyleBox[
+":=\[LeftFloor](",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["+",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+")/",FontFamily -> "Times New Roman"],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[RightFloor]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox["\t",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["if",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox[StyleBox[
+" ",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["x",FontFamily -> "Times New Roman"],StyleBox[
+">",FontFamily -> "Times New Roman"],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["m",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["then",FontFamily -> "Times New Roman"],
+FontWeight -> Bold],StyleBox[StyleBox[" ",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"m",FontFamily -> "Times New Roman"],StyleBox["+",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"\t",FontFamily -> "Times New Roman"],StyleBox[StyleBox["else",FontFamily -> "Times New Roman"],
+FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["m",FontFamily -> "Times New Roman"],"\n",StyleBox[
+StyleBox["if",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["x",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["then",
+FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox[StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["location",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],"\n",StyleBox[StyleBox["else",
+FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox[StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[StyleBox["location",
+FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["0",FontFamily -> "Times New Roman"],"\n",StyleBox[
+StyleBox["return",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[StyleBox["location",FontFamily -> "Times New Roman"],
+FontSlant -> Italic]}],"Text",ExpressionUUID -> "c5ea89b6-b1fc-4c36-b7d4-d07cf369f328",
+CellFrame -> 1],Cell[
+TextData[{StyleBox["Code",FontFamily -> "Times New Roman"],StyleBox[
+":",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "5e2a4a52-be96-4d92-9359-a6f055b7f951"],Cell[
+BoxData[
+RowBox[{RowBox[{"BinarySearch","[",RowBox[{"x_Integer",",",RowBox[{"a",":",RowBox[
+{"{","__Integer","}"}]}]}],"]"}],":=",RowBox[{"Module","["," ","\n",RowBox[{RowBox[
+{"{",RowBox[{RowBox[{"n","=",RowBox[{"Length","[","a","]"}]}],",",RowBox[{"i","=","1"}],","," ","j",",","m",",","location"}],"}"}],",","\n",RowBox[
+{RowBox[{"j","=","n"}],";","\n",RowBox[{"While","[",RowBox[{RowBox[{"i","<","j"}],",","\n",RowBox[
+{RowBox[{"m","=",RowBox[{"Floor","[",RowBox[{RowBox[{"(",RowBox[{"i","+","j"}],")"}],"/","2"}],"]"}]}],";","\n",RowBox[
+{"If"," ","[",RowBox[{RowBox[{"x",">",RowBox[{"a","[",RowBox[{"[","m","]"}],"]"}]}],",",RowBox[
+{"i","=",RowBox[{"m","+","1"}]}],",",RowBox[{"j","=","m"}]}],"]"}],";"}]}],"\n","]"}],";","\n",RowBox[
+{"If","[",RowBox[{RowBox[{"x","==",RowBox[{"a","[",RowBox[{"[","i","]"}],"]"}]}],","," ",RowBox[
+{"location","=","i"}],","," ",RowBox[{"location","=","0"}]}],"]"}],";"," ","\n",RowBox[
+{"Return","[","location","]"}],";"}]}],"\n","]"}]}]],"Input",ExpressionUUID -> "c87b9026-981b-4ba6-9845-7bea3425def5",
+CellFrameColor -> RGBColor[0,0,0],CellLabel -> "In[55]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[
+RowBox[{"BinarySearch","[",RowBox[{"19",",",RowBox[{"Range","[","22","]"}]}],"]"}]],
+"Input",ExpressionUUID -> "c9c3ef9e-81da-46cd-b5b7-5cbb5687738b",CellFrame -> 1,Background -> RGBColor[
+0.8705882352941177`,0.9411764705882353`,1],CellFrameColor -> RGBColor[0,0,0],CellLabel -> "In[56]:= "],Cell[
+BoxData[
+"19",StandardForm],"Output",ExpressionUUID -> "0e63b406-4eb9-4fb2-9d8e-b32653f371c8",
+CellLabel -> "Out[56]= "]},Open],ExpressionUUID -> "470a7e5d-899f-4f98-877f-f72ac84085b0"]},
+Open],ExpressionUUID -> "4b455d5b-288c-4cd5-9e6f-c05e0f0e972e"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"2",StyleBox[RowBox[{"."," "}]],"Implement"," ","the"," ","bubble"," ","sort"," ","presented"," ","as"}],
+"Subtitle",ExpressionUUID -> "37f0ee56-7428-426a-b16e-884d6885225d"],Cell[
+TextData[
+{StyleBox[StyleBox[StyleBox["ALGORITHM",FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox[StyleBox[StyleBox[":",
+FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox[StyleBox["The",FontColor -> RGBColor[
+0,0,1]],FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],StyleBox[StyleBox[StyleBox["Bubble",FontColor -> RGBColor[
+0,0,1]],FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],StyleBox[StyleBox[StyleBox["Sort",FontColor -> RGBColor[
+0,0,1]],FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],StyleBox[StyleBox[StyleBox["Algorithm",FontColor -> RGBColor[
+0,0,1]],FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],"\n",StyleBox[
+StyleBox["procedure",FontWeight -> Bold],FontFamily -> "Times New Roman"],"\[NonBreakingSpace]",StyleBox[
+StyleBox["bubble",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[" ",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[StyleBox[
+"sort",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["(",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"...,",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[":",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox["real",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["numbers",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["with",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[GreaterEqual]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox[")",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox[StyleBox["for",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[StyleBox["to",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["-",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["1",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"\t",FontFamily -> "Times New Roman"],StyleBox[StyleBox["for",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["to",FontWeight -> Bold],FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox["-",FontFamily -> "Times New Roman"],StyleBox[
+"i",FontFamily -> "Times New Roman"],"\n",StyleBox[RowBox[{StyleBox["\t",FontFamily -> "Times New Roman"],StyleBox[
+"\t",FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["if",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[">",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"+",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["then",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"interchange",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["and",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"+",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+"]]",FontFamily -> "Times New Roman"],"\n",StyleBox["{",FontFamily -> "Times New Roman"],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["...,",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["in",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["increasing",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["order",FontFamily -> "Times New Roman"],StyleBox[
+"}",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "dfeec3b1-1a23-4a75-8648-eafdd1aab832",
+CellFrame -> 1],Cell[
+TextData[{StyleBox["Code",FontFamily -> "Times New Roman"],StyleBox[
+":",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "12301722-9478-45a2-95fb-ae906796ed3e"],Cell[
+BoxData[
+RowBox[{RowBox[{RowBox[{"BubbleSort","[",RowBox[{"a",":",RowBox[{"{","__Integer","}"}]}],"]"}],":=",RowBox[
+{"Module","[","\n",RowBox[{RowBox[{"{",RowBox[{"n",",","i",",","j",",",RowBox[{"b","=","a"}]}],"}"}],",","\n",RowBox[
+{RowBox[{"n","=",RowBox[{"Length","[","a","]"}]}],";","\n",RowBox[{"For","[",RowBox[
+{RowBox[{"i","=","1"}],",",RowBox[{"i","\[LessEqual]",RowBox[{"n","-","1"}]}],",",RowBox[
+{"i","++"}],",","\n",RowBox[{RowBox[{"For","[",RowBox[{RowBox[{"j","=","1"}],",",RowBox[
+{"j","\[LessEqual]",RowBox[{"n","-","i"}]}],",",RowBox[{"j","++"}],",","\n",RowBox[
+{RowBox[{"If","[",RowBox[{RowBox[{RowBox[{"b","[",RowBox[{"[","j","]"}],"]"}],">",RowBox[
+{"b","[",RowBox[{"[",RowBox[{"j","+","1"}],"]"}],"]"}]}],",","\n",RowBox[{RowBox[
+{"{",RowBox[{RowBox[{"b","[",RowBox[{"[","j","]"}],"]"}],",",RowBox[{"b","[",RowBox[
+{"[",RowBox[{"j","+","1"}],"]"}],"]"}]}],"}"}],"=",RowBox[{"{",RowBox[{RowBox[{"b","[",RowBox[
+{"[",RowBox[{"j","+","1"}],"]"}],"]"}],",",RowBox[{"b","[",RowBox[{"[","j","]"}],"]"}]}],"}"}]}],","}],"\n","]"}],";"}]}],"\n","]"}],";"}]}],"\n","]"}],";","\n",RowBox[
+{"Return","[","b","]"}],";"}]}],"\n","]"}]}],"\n"}]],"Input",ExpressionUUID -> "d6e20871-c85f-4995-aefc-f886e2d26e29",
+CellLabel -> "In[57]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"BubbleSort","[",RowBox[
+{"{",RowBox[{"1",",","4",",","9",",","2",",","5",",","6",",","3",",","8",",","7"}],"}"}],"]"}]],
+"Input",ExpressionUUID -> "a7473288-ae9f-404e-8615-149040b9d8d6",CellFrame -> 1,Background -> RGBColor[
+0.8705882352941177`,0.9411764705882353`,1],CellLabel -> "In[58]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1",",","2",",","3",",","4",",","5",",","6",",","7",",","8",",","9"}],"}"}],
+StandardForm],"Output",ExpressionUUID -> "8ac92868-3c8c-4c70-9aa8-82741d6b175e",CellLabel -> "Out[58]= "]},
+Open],ExpressionUUID -> "f3237b89-5965-4306-b5fe-29df59624023"]},Open],ExpressionUUID -> "3f233ec0-f22b-460d-8278-e3d0d1753e5c"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"3",StyleBox[RowBox[{"."," "}]],"Implement"," ","the"," ","insertion"," ","sort"," ","presented"," ","as"}],
+"Subtitle",ExpressionUUID -> "cf908748-764c-4237-8f84-9cdffe56c070"],Cell[
+TextData[
+{StyleBox[StyleBox[StyleBox["ALGORITHM",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],
+FontVariations -> {Underline -> True}],StyleBox[RowBox[{StyleBox[StyleBox[StyleBox[
+":",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],FontVariations -> {Underline -> True}],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],
+FontVariations -> {Underline -> True}]}]],StyleBox[StyleBox[StyleBox["The",FontColor -> RGBColor[
+0,0,1]],FontFamily -> "Times New Roman"],FontVariations -> {Underline -> True}],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],
+FontVariations -> {Underline -> True}],StyleBox[StyleBox[StyleBox["Insertion",FontColor -> RGBColor[
+0,0,1]],FontFamily -> "Times New Roman"],FontVariations -> {Underline -> True}],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],
+FontVariations -> {Underline -> True}],StyleBox[StyleBox[StyleBox["Sort",FontColor -> RGBColor[
+0,0,1]],FontFamily -> "Times New Roman"],FontVariations -> {Underline -> True}],StyleBox[
+StyleBox[StyleBox[" ",FontColor -> RGBColor[0,0,1]],FontFamily -> "Times New Roman"],
+FontVariations -> {Underline -> True}],StyleBox[StyleBox[StyleBox["Algorithm",FontColor -> RGBColor[
+0,0,1]],FontFamily -> "Times New Roman"],FontVariations -> {Underline -> True}],"\n",StyleBox[
+StyleBox["procedure",FontWeight -> Bold],FontFamily -> "Times New Roman"],"\[NonBreakingSpace]",StyleBox[
+StyleBox["insertion",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[
+StyleBox[" ",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[StyleBox[
+"sort",FontSlant -> Italic],FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["(",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"...,",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[":",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox["real",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["numbers",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["with",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[GreaterEqual]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox[")",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox[StyleBox["for",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[StyleBox["to",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],"\n",StyleBox["\t",FontFamily -> "Times New Roman"],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["1",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"\t",FontFamily -> "Times New Roman"],StyleBox[StyleBox["while",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[">",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+"]]",FontFamily -> "Times New Roman"],"\n",StyleBox[RowBox[{StyleBox["\t",FontFamily -> "Times New Roman"],StyleBox[
+"\t",FontFamily -> "Times New Roman"]}]],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"i",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["+",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["1",FontFamily -> "Times New Roman"],"\n",StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"m",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"]}]],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"]]",FontFamily -> "Times New Roman"],"\n",StyleBox[RowBox[{StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["for",FontWeight -> Bold],
+FontFamily -> "Times New Roman"],StyleBox[StyleBox[" ",FontWeight -> Bold],FontFamily -> "Times New Roman"],StyleBox[
+"k",FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"0",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["to",FontWeight -> Bold],FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"-",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+"-",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],"\n",StyleBox[RowBox[{StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["\t",FontFamily -> "Times New Roman"],StyleBox[
+"\t",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["j",FontFamily -> "Times New Roman"],StyleBox[
+"-",FontFamily -> "Times New Roman"],StyleBox["k",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"j",FontFamily -> "Times New Roman"],StyleBox["-",FontFamily -> "Times New Roman"],StyleBox[
+"k",FontFamily -> "Times New Roman"],StyleBox["-",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox["]]",FontFamily -> "Times New Roman"],"\n",StyleBox[
+RowBox[{StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[":=",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["m",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"{",FontFamily -> "Times New Roman"],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"...,",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["in",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["increasing",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["order",FontFamily -> "Times New Roman"],StyleBox[
+"}",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "dd68d91e-58f4-40a4-af78-76d3aabffd9c",
+CellFrame -> 1],Cell[
+TextData[{StyleBox["Code",FontFamily -> "Times New Roman"],StyleBox[
+":",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "f86593e1-012f-4649-8d29-a8bfc684d9b3"],Cell[
+BoxData[
+RowBox[{RowBox[{"InsertionSort","[",RowBox[{"a",":",RowBox[{"{","__Integer","}"}]}],"]"}],":=",RowBox[
+{"Module","[","\n",RowBox[{RowBox[{"{",RowBox[{"i",",","j",",","k",",","n",",","m",",",RowBox[
+{"b","=","a"}]}],"}"}],",","\n",RowBox[{RowBox[{"n","=",RowBox[{"Length","[","a","]"}]}],";","\n",RowBox[
+{"For","[",RowBox[{RowBox[{"j","=","2"}],",",RowBox[{"j","\[LessEqual]","n"}],",",RowBox[
+{"j","++"}],",","\n",RowBox[{RowBox[{"i","=","1"}],";","\n",RowBox[{"While","[",RowBox[
+{RowBox[{RowBox[{"b","[",RowBox[{"[","j","]"}],"]"}],">",RowBox[{"b","[",RowBox[{"[","i","]"}],"]"}]}],",",RowBox[
+{"i","++"}]}],"]"}],";","\n",RowBox[{"m","=",RowBox[{"b","[",RowBox[{"[","j","]"}],"]"}]}],";","\n",RowBox[
+{"For","[",RowBox[{RowBox[{"k","=","0"}],",",RowBox[{"k","\[LessEqual]",RowBox[{"(",RowBox[
+{"j","-","i","-","1"}],")"}]}],",",RowBox[{"k","++"}],",","\n",RowBox[{RowBox[{"b","[",RowBox[
+{"[",RowBox[{"j","-","k"}],"]"}],"]"}],"=",RowBox[{"b","[",RowBox[{"[",RowBox[{"j","-","k","-","1"}],"]"}],"]"}]}]}],"\n","]"}],";","\n"," ",RowBox[
+{RowBox[{"b","[",RowBox[{"[","i","]"}],"]"}],"=","m"}],";"}]}],"\n","]"}],";","\n",RowBox[
+{"Return","[","b","]"}],";"}]}],"\n","]"}]}]],"Input",ExpressionUUID -> "e934cbd3-86ac-4202-a68f-cfe588680724",
+CellLabel -> "In[59]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"InsertionSort","[",RowBox[
+{"{",RowBox[{"1",",","4",",","9",",","2",",","5",",","6",",","3",",","8",",","7"}],"}"}],"]"}]],
+"Input",ExpressionUUID -> "bdb1455e-33a4-4780-835a-7ad2869480e7",CellFrame -> 1,Background -> RGBColor[
+0.8705882352941177`,0.9411764705882353`,1],CellLabel -> "In[60]:= "],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"1",",","2",",","3",",","4",",","5",",","6",",","7",",","8",",","9"}],"}"}],
+StandardForm],"Output",ExpressionUUID -> "79570e6d-f3b0-4657-905d-5427fc1b417b",CellLabel -> "Out[60]= "]},
+Open],ExpressionUUID -> "4f1e0f0c-8f56-4fd1-9d5c-ce32431a76c6"]},Open],ExpressionUUID -> "51a2dec1-1701-450c-a59e-bcb222475d6a"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"4",StyleBox[RowBox[{"."," "}]],"A","\[NonBreakingSpace]","palindrome","\[NonBreakingSpace]","is"," ","a"," ","string"," ","that"," ","reads"," ","the"," ","same"," ","forward"," ","and"," ","backward",StyleBox[
+RowBox[{"."," "}]],"Implememt"," ","an"," ","algorithm"," ","for"," ","determining"," ","whether"," ","a"," ","string"," ","of","\[NonBreakingSpace]","n","\[NonBreakingSpace]","characters"," ","is"," ","a"," ","palindrome","."}],
+"Subtitle",ExpressionUUID -> "da97eca2-68d8-457c-9d5e-60cf7226a42c"],Cell[
+TextData[
+{StyleBox[StyleBox[StyleBox["ALGORITHM",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[RowBox[{StyleBox[StyleBox[StyleBox[":",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]]}]],StyleBox[StyleBox[StyleBox["The",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Palindrome",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Check",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[
+StyleBox[" ",FontVariations -> {Underline -> True}],FontFamily -> "Times New Roman"],
+FontColor -> RGBColor[0,0,1]],StyleBox[StyleBox[StyleBox["Algorithm",FontVariations -> {Underline -> True}],
+FontFamily -> "Times New Roman"],FontColor -> RGBColor[0,0,1]],"\n",StyleBox[StyleBox[
+"procedure",FontFamily -> "Times New Roman"],FontWeight -> Bold],"\[NonBreakingSpace]",StyleBox[
+StyleBox["palindrome",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[
+StyleBox[" ",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[StyleBox[
+"check",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[RowBox[{StyleBox[
+StyleBox[" ",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox["(",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["2",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]],",FontFamily -> "Times New Roman"],StyleBox[" ",FontFamily -> "Times New Roman"],StyleBox[
+"...,",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"a",FontFamily -> "Times New Roman"],StyleBox["[[",FontFamily -> "Times New Roman"],StyleBox[
+"n",FontFamily -> "Times New Roman"],StyleBox[RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox[":",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"]}]],StyleBox["string",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox[")",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],"\n",StyleBox[StyleBox["answer",FontFamily -> "Times New Roman"],
+FontSlant -> Italic],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+StyleBox["true",FontFamily -> "Times New Roman"],FontWeight -> Bold],"\n",StyleBox[
+StyleBox["for",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"1",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["to",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox[RowBox[
+{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["\[LeftFloor]",
+FontFamily -> "Times New Roman"]}]],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"/",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+"2",FontFamily -> "Times New Roman"],StyleBox["\[RightFloor]",FontFamily -> "Times New Roman"],"\n",StyleBox[
+"\t",FontFamily -> "Times New Roman"],StyleBox["if",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox["=\:0338",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"[[",FontFamily -> "Times New Roman"],StyleBox["n",FontFamily -> "Times New Roman"],StyleBox[
+"+",FontFamily -> "Times New Roman"],StyleBox["1",FontFamily -> "Times New Roman"],StyleBox[
+"-",FontFamily -> "Times New Roman"],StyleBox["i",FontFamily -> "Times New Roman"],StyleBox[
+RowBox[{StyleBox["]]",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"]}]],StyleBox[StyleBox["then",FontFamily -> "Times New Roman"],
+FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+StyleBox["answer",FontFamily -> "Times New Roman"],FontSlant -> Italic],StyleBox[
+RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+":=",FontFamily -> "Times New Roman"],StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"]}]],StyleBox[
+StyleBox["false",FontFamily -> "Times New Roman"],FontWeight -> Bold],"\n",StyleBox[
+StyleBox["return",FontFamily -> "Times New Roman"],FontWeight -> Bold],StyleBox["\[NonBreakingSpace]",
+FontFamily -> "Times New Roman"],StyleBox[StyleBox["answer",FontFamily -> "Times New Roman"],
+FontSlant -> Italic],StyleBox[RowBox[{StyleBox["\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox[
+"{",FontFamily -> "Times New Roman"]}]],StyleBox["answer",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["true",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["if",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["and",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["only",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["if",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["string",FontFamily -> "Times New Roman"],StyleBox[
+" ",FontFamily -> "Times New Roman"],StyleBox["is",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["a",FontFamily -> "Times New Roman"],StyleBox[
+"\[NonBreakingSpace]",FontFamily -> "Times New Roman"],StyleBox["palindrome",FontFamily -> "Times New Roman"],StyleBox[
+"}",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "53b48270-1bbd-42e3-9bf4-b7c10b34836e",
+CellFrame -> 1],Cell[
+TextData[{StyleBox["Code",FontFamily -> "Times New Roman"],StyleBox[
+":",FontFamily -> "Times New Roman"]}],"Text",ExpressionUUID -> "1df1a674-eeda-46a3-a945-c1e4c1f61b3f"],Cell[
+BoxData[
+RowBox[{RowBox[{"PalindromeCheck","[",RowBox[{"a",":",RowBox[{"{","__String","}"}]}],"]"}],":=",RowBox[
+{"Module","[","\n",RowBox[{RowBox[{"{",RowBox[{"i",",","answer",",","n"}],"}"}],",","\n",RowBox[
+{RowBox[{"n","=",RowBox[{"Length","[","a","]"}]}],";","\n",RowBox[{"answer","=","True"}],";","\n",RowBox[
+{"For","[",RowBox[{RowBox[{"i","=","1"}],",",RowBox[{"i","\[LessEqual]",RowBox[{"Floor","[",RowBox[
+{"n","/","2"}],"]"}]}],",",RowBox[{"i","++"}],",","\n",RowBox[{RowBox[{"If","[",RowBox[
+{RowBox[{RowBox[{"a","[",RowBox[{"[","i","]"}],"]"}],"\[NotEqual]",RowBox[{"a","[",RowBox[
+{"[",RowBox[{"n","+","1","-","i"}],"]"}],"]"}]}],",",RowBox[{"answer","=","False"}],","}],"]"}],";"}]}],"\n","]"}],";","\n",RowBox[
+{"Return","[","answer","]"}],";"}]}],"\n","]"}]}]],"Input",ExpressionUUID -> "c2b2e72f-be09-4bf1-ac30-84835a4f7d16",
+CellLabel -> "In[61]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"PalindromeCheck","[",RowBox[
+{"{",RowBox[{"\"T\"",",","\"E\"",",","\"N\"",",","\"E\"",",","\"T\""}],"}"}],"]"}]],
+"Input",ExpressionUUID -> "b02d5db6-9845-4954-b15c-2735407e3966",CellFrame -> 1,Background -> RGBColor[
+0.8705882352941177`,0.9411764705882353`,1],CellLabel -> "In[62]:= "],Cell[
+BoxData[
+"True",StandardForm],"Output",ExpressionUUID -> "739c02a0-7021-416b-a5f4-e6c852267212",
+CellLabel -> "Out[62]= "]},Open],ExpressionUUID -> "11d560f9-e99b-4aa6-bb95-4d12a011020d"],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"PalindromeCheck","[",RowBox[{"{",RowBox[{"\"I\"",",","\"N\"",",","\"C\"",",","\"E\"",",","\"P\"",",","\"T\"",",","\"I\"",",","\"O\"",",","\"N\""}],"}"}],"]"}]],
+"Input",ExpressionUUID -> "842fd9b2-fa22-44a3-8920-10e12016a611",CellFrame -> 1,Background -> RGBColor[
+0.8705882352941177`,0.9411764705882353`,1],CellLabel -> "In[63]:= "],Cell[
+BoxData[
+"False",StandardForm],"Output",ExpressionUUID -> "aa87c0ca-b5ad-4ec6-9c9f-07a5e4a86a7c",
+CellLabel -> "Out[63]= "]},Open],ExpressionUUID -> "c3a2f612-3eb5-4db1-b599-769e82ae7bf7"]},
+Open],ExpressionUUID -> "ec1a0fa6-f48e-4424-8fc7-82b1e78973d3"]},Open],ExpressionUUID -> "2e66b5b9-1c62-4a5f-b22c-387e0d484567"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "12.1 for Wolfram Cloud 1.55 (July 7, 2020)"]

@@ -1,0 +1,79 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+TextData[{"Lab"," ","5",StyleBox[RowBox[{":"," "}]],"Induction"," ","and"," ","Recursion"}],
+"Title",ExpressionUUID -> "a3dcf700-6c32-410a-aa9e-1dfbee261bbe"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"6",StyleBox[RowBox[{".\:0e08\:0e07\:0e43\:0e0a\:0e49\:0e42\:0e1b\:0e23\:0e41\:0e01\:0e23\:0e21"," "}]],"Mathematica",StyleBox[
+RowBox[{"\:0e43\:0e19\:0e01\:0e32\:0e23\:0e2a\:0e23\:0e49\:0e32\:0e07\:0e1f\:0e31\:0e07\:0e0a\:0e31\:0e19\:0e01\:0e4c"," "}]],"Fibonacci",StyleBox[
+RowBox[{" ","\:0e17\:0e35\:0e48\|10fc00\:0e19\:0e34\:0e22\:0e32\:0e21\:0e42\:0e14\:0e22"}]],"\n","fn",StyleBox[
+RowBox[{"\[NonBreakingSpace]","="}]],"fn","\[Minus]","1",StyleBox[RowBox[{"\[NonBreakingSpace]","+"}]],"fn","\[Minus]","2",StyleBox[
+RowBox[{","," "}]],"f0",StyleBox[RowBox[{"\[NonBreakingSpace]","="}]],"0",StyleBox[
+RowBox[{","," "}]],"f1",StyleBox[RowBox[{"\[NonBreakingSpace]","="}]],"1",StyleBox[
+RowBox[{"\[NonBreakingSpace]","\:0e43\:0e19\:0e01\:0e32\:0e23\:0e40\:0e02\:0e35\:0e22\:0e19\:0e42\:0e1b\:0e23\:0e41\:0e01\:0e23\:0e21\:0e19\:0e31\:0e49\:0e19\:0e43\:0e2b\:0e49\:0e40\:0e02\:0e35\:0e22\:0e19\:0e17\:0e31\:0e49\:0e07\:0e41\:0e1a\:0e1a"," "}]],"recursive",StyleBox[
+RowBox[{" ","\:0e41\:0e25\:0e30"," "}]],"iterative",StyleBox[RowBox[{" ","\:0e1e\:0e23\:0e49\:0e2d\:0e21\:0e17\:0e31\:0e49\:0e07\:0e2b\:0e32\:0e04\:0e48\:0e32","\[NonBreakingSpace]"}]],"f","[","30","]","\n",StyleBox[
+RowBox[{"(\:0e2a\:0e48\:0e07\:0e44\:0e1f\:0e25\:0e4c"," ","."}]],"nb",")"}],"Subtitle",
+ExpressionUUID -> "eecd1bc3-65fd-4478-81c2-dda34137300e"],Cell[
+CellGroupData[{Cell[
+
+"\<Recursive\>","Section",ExpressionUUID -> "54925a83-7ff7-40fb-b717-99aff445bfb9"],Cell[
+BoxData[
+RowBox[{RowBox[{"recursiveFibonacci","[","n_Integer","]"}],":=",RowBox[{"Module","["," ","\n",RowBox[
+{RowBox[{"{","}"}],",","\n",RowBox[{RowBox[{"If","[",RowBox[{RowBox[{"n","\[LessEqual]","1"}],",","\n",RowBox[
+{"Return","[","n","]"}],",",RowBox[{"(*",RowBox[{RowBox[{"recursiveFibonacci","[","0","]"}],"=",RowBox[
+{RowBox[{"0","&&",RowBox[{"recursiveFibonacci","[","1","]"}]}],"=","1"}]}],"*)"}],"\n",RowBox[
+{"Return","[",RowBox[{RowBox[{"recursiveFibonacci","[",RowBox[{"n","-","1"}],"]"}],"+",RowBox[
+{"recursiveFibonacci","[",RowBox[{"n","-","2"}],"]"}]}],"]"}]}],"\n","]"}],";"}]}],"\n","]"}]}]],
+"Input",ExpressionUUID -> "764363b6-18cd-4a43-958d-89cabe8b093d",CellLabel -> "In[93]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"recursiveFibonacci","[","30","]"}]],"Input",ExpressionUUID -> "a6ca9fe2-96d3-4b26-9aac-eeece2e8b449",
+CellLabel -> "In[94]:= "],Cell[
+BoxData["832040",StandardForm],"Output",ExpressionUUID -> "e67889f3-baf2-4ba4-9dba-8384f29daf9b",
+CellLabel -> "Out[94]= "]},Open],ExpressionUUID -> "af472a52-43cc-4cca-98e6-ca170faa3bf5"]},
+Open],ExpressionUUID -> "874740e4-a634-497d-85b9-832ea1ba9c2e"],Cell[
+CellGroupData[
+{Cell[
+"\<Iterative\>","Section",ExpressionUUID -> "c9d15da1-fad7-4a79-9794-c642c3c9341a"],Cell[
+BoxData[
+RowBox[{RowBox[{"iterativeFibonacci","[","n_Integer","]"}],":=",RowBox[{"Module","["," ","\n",RowBox[
+{RowBox[{"{",RowBox[{"i",",","x",",","y",",","z"}],"}"}],",","\n",RowBox[{RowBox[
+{"If","[",RowBox[{RowBox[{"n","==","0"}],",",RowBox[{"Return","[","0","]"}],",",RowBox[
+{"(*",RowBox[{RowBox[{"iterativeFibonacci","[","0","]"}],"=","0"}],"*)"}],"\n",RowBox[
+{RowBox[{"x","=","0"}],";","\n",RowBox[{"y","=","1"}],";","\n",RowBox[{"For","[",RowBox[
+{RowBox[{"i","=","1"}],",",RowBox[{"i","\[LessEqual]",RowBox[{"n","-","1"}]}],",",RowBox[
+{"i","++"}],",","\n",RowBox[{RowBox[{"z","=",RowBox[{"x","+","y"}]}],";","\n",RowBox[
+{"x","=","y"}],";","\n",RowBox[{"y","=","z"}],";"}]}],"\n","]"}],";","\n",RowBox[
+{"Return","[","y","]"}]}]}],"\n","]"}],";"}]}],"\n","]"}]}]],"Input",ExpressionUUID -> "10e519af-a114-4d00-b9ba-0b9d54039d45",
+CellLabel -> "In[95]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"iterativeFibonacci","[","30","]"}]],
+"Input",ExpressionUUID -> "001cdbdf-148f-4fe7-9f4c-9361156150ad",CellLabel -> "In[96]:= "],Cell[
+BoxData[
+"832040",StandardForm],"Output",ExpressionUUID -> "1bd1df92-1b0c-44ec-844a-a44516995cb3",
+CellLabel -> "Out[96]= "]},Open],ExpressionUUID -> "2098b591-afac-4ecf-a22c-87506a3007c8"]},
+Open],ExpressionUUID -> "e1974349-3e0e-45f8-a782-1d90a11a0ca0"]},Open],ExpressionUUID -> "7006ab31-c7d7-415d-b269-4d8bfcfc8852"],Cell[
+CellGroupData[
+{Cell[
+TextData[{"7",StyleBox[RowBox[{"."," ","\:0e08\:0e07\:0e40\:0e02\:0e35\:0e22\:0e19\:0e42\:0e1b\:0e23\:0e41\:0e01\:0e23\:0e21"," "}]],"linear"," ","search",StyleBox[
+RowBox[{" ","\:0e42\:0e14\:0e22\:0e40\:0e02\:0e35\:0e22\:0e19\:0e42\:0e1b\:0e23\:0e41\:0e01\:0e23\:0e21\:0e41\:0e1a\:0e1a"," "}]],"recursive",StyleBox[
+RowBox[{" ","(\:0e2a\:0e48\:0e07\:0e44\:0e1f\:0e25\:0e4c"," ","."}]],"nb",")"}],"Subtitle",
+ExpressionUUID -> "de1b5716-a2e6-4f30-9bd9-74f07c6bcd59"],Cell[
+BoxData[RowBox[{RowBox[
+{"recursiveLinearSearch","[",RowBox[{"i_Integer",",","j_Integer",",",RowBox[{"x",":",RowBox[
+{"{","__Integer","}"}]}]}],"]"}],":=",RowBox[{"Module","[","\n",RowBox[{RowBox[{"{","}"}],",","\n",RowBox[
+{RowBox[{"If","[",RowBox[{RowBox[{"j","<","0"}],",",RowBox[{"Return","[","0","]"}],",","\n",RowBox[
+{"If","[",RowBox[{RowBox[{RowBox[{"x","[",RowBox[{"[","j","]"}],"]"}],"==","i"}],",",RowBox[
+{"Return","[","j","]"}],",","\n",RowBox[{"Return","[",RowBox[{"recursiveLinearSearch","[",RowBox[
+{"i",",",RowBox[{"j","-","1"}],",","x"}],"]"}],"]"}]}],"\n","]"}]}],"\n","]"}],";"}]}],"\n","]"}]}]],
+"Input",ExpressionUUID -> "80ab2c1b-87d3-4d34-8a38-7496cc7ca806",CellLabel -> "In[97]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"recursiveLinearSearch","[",RowBox[{"7",",","8",",",RowBox[
+{"{",RowBox[{"9",",","8",",","7",",","6",",","5",",","4",",","3",",","2",",","1"}],"}"}]}],"]"}]],
+"Input",ExpressionUUID -> "46c65c55-b7fe-484b-8fc3-f2876f67c92d",CellLabel -> "In[98]:= "],Cell[
+BoxData[
+"3",StandardForm],"Output",ExpressionUUID -> "73c30346-998d-4bee-9a1e-851d1d1015d4",
+CellLabel -> "Out[98]= "]},Open],ExpressionUUID -> "bd490f46-f95f-4383-91c9-d63f263a04df"]},
+Open],ExpressionUUID -> "c6b41a9f-7017-46b9-80aa-ef71209a56cf"]},Open],ExpressionUUID -> "7d8fc661-7bb4-412b-b9d5-a8f7882b264b"]},
+StyleDefinitions -> "Default.nb",FrontEndVersion -> "12.1 for Wolfram Cloud 1.55 (July 7, 2020)"]
